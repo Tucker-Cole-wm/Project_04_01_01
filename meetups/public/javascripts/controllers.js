@@ -1,6 +1,12 @@
+<<<<<<< .merge_file_KwSI6V
 var artistControllers = angular.module('artistControllers', ['ngAnimate']);
 artistControllers.controller('ListController',['$scope', '$http', function ($scope , $http) {
 $http.get('js/data.json').then(function(response) {
+=======
+var speakers = angular.module('speakers', ['ngAnimate']);
+speakers.controller('ListController',['$scope', '$http', function ($scope , $http) {
+$http.get('data.json').then(function(response) {
+>>>>>>> .merge_file_rjsiJL
       $scope.artists = response.data;
       $scope.artistOrder = 'name';
     },
@@ -8,6 +14,7 @@ $http.get('js/data.json').then(function(response) {
       console.log('HTTP request failed with result: ' + result);
     });
 }]);
+<<<<<<< .merge_file_KwSI6V
 
 
 artistControllers.controller('DetailsController',['$scope', '$http', '$routeParams', function ($scope , $http, $routeParams) {
@@ -34,3 +41,5 @@ $http.get('js/data.json').then(function(response) {
       console.log('HTTP request failed with result: ' + result);
     });
 }]);
+=======
+>>>>>>> .merge_file_rjsiJL
