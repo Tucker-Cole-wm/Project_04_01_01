@@ -1,14 +1,10 @@
-var myApp = angular.module('myApp', ['ngRoute', 'artistControllers']);
+var myApp = angular.module('myApp', ['ngRoute', 'speakerController']);
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider.when('/list', {
     templateUrl: 'partials/list.html',
-    controller : 'ListController'
-  })
-  .when('/details/:itemId', {
-    templateUrl: 'partials/details.html',
-    controller: 'DetailsController'
+    controller : 'speakerController'
   })
   .otherwise({
-      redirectTo: 'list'
+      redirectTo: '/#!'
   })
 }]);
