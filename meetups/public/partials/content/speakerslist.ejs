@@ -2,11 +2,13 @@
     <section class="layout">
         <div class="speakers">
             <% artists.forEach(function(item) { %>
+              <!-- // ng-repeat -->
                 <article class="artist group">
                     <h3><%= item.title %>
                         <span class="small">with
                             <a href="/speakers/<%= item.shortname %>">
                                 <%= item.name %>
+                                <!-- //change with double curlys -->
                             </a>
                         </span>
                     </h3>
@@ -14,14 +16,6 @@
                         <a href="/speakers/<%= item.shortname %>">
                             <img class="speaker" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.shortname %>">
                         </a>
-                        <% if(page != 'home') { %>
-                            <% if(page === 'artistList') { %>
-                                // With a minus it then pushes the data in raw form instead of a string.
-                                <%- item.summary %>
-                            <% } else { %>
-                                <%- item.description %>
-                            <% } %>
-                        <% } %>
                     </p>
                 </article>
             <% }); %>
