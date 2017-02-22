@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head><% include partials/template/head.ejs %></head>
-  <body class="<%= page %>">
+  <body class="<%= page %>"
+  ng-app="myApp">
+  <!--set the app in the body so the app can controll the entire thing-->
     <% include partials/template/header.ejs %>
     <% include partials/content/speakerslist.ejs %>
     <section class="layout">
-        <div class="primary">
-            <% include partials/content/whoarewe.ejs %>
-            <% include partials/content/getbusy.ejs %>
-            <% include partials/content/whoshouldcome.ejs %>
+        <div class="primary"
+        ng-view >
+      <!--set the view for the controller-->
+
         </div><!-- Primary -->
         <aside class="secondary">
             <% include partials/content/nextmeeting.ejs %>
