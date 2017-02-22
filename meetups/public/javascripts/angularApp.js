@@ -1,10 +1,9 @@
-var myApp = angular.module('myApp', ['ngRoute', 'speakerController']);
+ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(['$routeProvider', function($routeProvider){
-  $routeProvider.when('/list', {
-    templateUrl: 'partials/list.html',
-    controller : 'speakerController'
+  $routeProvider.when('/home', {
+    templateUrl: 'partials/home.ejs'
   })
   .otherwise({
-      redirectTo: '/#!'
+      redirectTo: '/home'
   })
 }]);
