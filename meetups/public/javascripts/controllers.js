@@ -20,3 +20,15 @@ meetups.controller('speakersController' , ['$scope' , '$http' , function($scope 
       console.log('HTTP request failed with result: ' + result);
     });
 }]);
+
+meetups.controller('detailsController' , ['$scope' , '$http' , function($scope, $http) {
+  $http.get('data.json').then(function(response){
+    $scope.details = 'true';
+    $scope.artists = response.data.speakers[indexOfArtist];
+    var indexOfArtist = $scope.artist.indexOf(itemid);
+
+  },
+    function(result){
+      console.log('HTTP request failed with result: ' + result);
+    })
+}])
