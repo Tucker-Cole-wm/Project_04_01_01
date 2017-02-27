@@ -8,6 +8,10 @@ myApp.config(['$routeProvider', function($routeProvider){
     templateUrl: 'partials/speakers.ejs',
     controller: 'speakersController'
   })
+  .when('/speakers/:itemid' , {
+    templateUrl: 'partials/speakers.ejs',
+    controller: 'detailsController'
+  })
   .otherwise({
       redirectTo: '/home'
   })

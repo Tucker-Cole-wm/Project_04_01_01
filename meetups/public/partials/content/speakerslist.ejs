@@ -10,7 +10,7 @@
                     <h3>{{ item.title }}
                         <span class="small">with
                         </div>
-                            <a href="/#!speakers/{{item.shortname}}">
+                            <a href="/#!speakers/{{artists.indexOf(item)}}">
                                 {{ item.name }}
                                 <!-- //change with double curlys -->
                             </a>
@@ -22,6 +22,25 @@
                         </a>
                     </p>
                     <p ng-show="speakers" ng-bind-html="item.description"></p>
+                    <div ng-show="details">
+                      <h3>{{ item.title }}
+                          <span class="small">with
+                          </div>
+                              <a href="/#!speakers/{{item.shortname}}">
+                                  {{ item.name }}
+                                  <!-- //change with double curlys -->
+                              </a>
+                          </span>
+                      </h3>
+                      <p>
+                          <a href="/#!speakers/{{item.shortname}}">
+                              <img class="speaker" src="/images/speakers/{{item.shortname}}_tn.jpg" alt="Photo of {{item.shortname}}">
+                          </a>
+                      </p>
+                      <p ng-bind-html="item.description"></p>
+                    </div>
+
+
                 </article>
         </div>
     </section>
